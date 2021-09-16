@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Language Detection</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<style>
+body
+{
+    margin: 0px;
+    padding: 0px;
+    display: flex;
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
+    background:linear-gradient(135deg, #af33e0, #ce2984);
+}
+fieldset
+{
+    
+    margin: auto;
+    padding-bottom: 50px;
+    padding-block-start: 20px;
+    border: 2px solid rgb(92, 6, 66);
+    border-radius: 6px;
+
+}
+legend
+{
+    font-size: 1.25cm;
+    padding: 10 20px;
+    color: rgb(87, 13, 83);
+
+}
+label
+{
+    display: block;
+    padding: 2px;
+    
+}
+input[type="submit"]
+{
+    padding: 2px 4px;
+    border: 2px solid rgb(40, 7, 41);
+    border-radius: 6px;
+    margin-top:  10px;
+    margin-bottom: auto;
+    display: block;
+    background: rgb(68, 16, 75);
+    color: white;
+    font-weight: bold;
+ 
+}
+.main{
+    max-width: 700px;
+    width: 100%;
+    background: rgb(237, 194, 243);
+    padding: 25px 30px;
+    border-radius: 6px;
+    opacity: 80%;
+}
+input[type="text"]
+{
+    padding: 6px 15px;
+    border-radius: 3px;
+    border-style: none;
+    margin-bottom: 3px;
+}
+label
+{
+    margin-bottom: 5px;
+    font-size: 0.56cm;
+    color: rgb(71, 8, 61);
+}
+</style>
+<body>
+    <div class="main">
+    <form action="{{ url_for('predict')}}" method="POST" class="detection">
+        <fieldset>
+            <legend>Type in!</legend>
+            <label for="username">Type a word or phrase</label>
+            <input type="text" name="username" placeholder="Type here" >
+            <input type="submit">
+        </fieldset>
+ 
+    </form>
+    <br>
+    <br>
+    <h4>{{  prediction_text }}</h4>
+    </div>
+</body>
+</html>
